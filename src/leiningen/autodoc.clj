@@ -6,7 +6,7 @@
   (:import [java.io File]))
 
 (def autodoc-project
-  {:dependencies [['autodoc "0.9.0-SNAPSHOT"]]
+  {:dependencies [['autodoc "0.9.0"]] ;; TODO: Automate this number
    :disable-deps-clean true
    :checksum-deps true})
 
