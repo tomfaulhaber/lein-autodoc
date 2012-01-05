@@ -1,4 +1,4 @@
-# An autodoc plugin for Clojure
+# An Autodoc plugin for Clojure
 
 This plugin allows you to use Leiningen to create documentation for 
 your project using the Autodoc tool,
@@ -10,8 +10,9 @@ see [http://tomfaulhaber.github.com/autodoc/](http://tomfaulhaber.github.com/aut
 
 ## Usage
 As usual with Leiningen plugins, you can access the plugin in one of two ways:
-* Install the plugin on a per-system basis with "lein plugin install lein-autodoc 0.9.0"
-* Add "[lein-autodoc 0.9.0]" to the dev-dependencies in your project.clj.
+
+1. Install the plugin on a per-system basis with "lein plugin install lein-autodoc 0.9.0"
+2. Add "[lein-autodoc 0.9.0]" to the dev-dependencies in your project.clj.
 
 Once installed, you can run "lein autodoc" to generate the documentation for your project.
 
