@@ -1,4 +1,4 @@
-# An Autodoc plugin for Clojure
+# An Autodoc plugin for Leiningen
 
 This plugin allows you to use Leiningen to create documentation for 
 your project using the Autodoc tool,
