@@ -32,8 +32,9 @@ prefixing the keywords by --"
   (let [args (map-to-arg-array (merge (select-keys project
                                                    [:name :description :root])
                                       (:autodoc project)
-                                      `{:source-path ~(join ":" (:source-paths project))}))
-        classpath (build-classpath project)]
+                                      `{:source-path ~(join ":" (:source-paths project))
+                                        :load-classpath ~(join ":" (get-classpath project))}))
+        classpath (join java.io.File/pathSeparatorChar (get-classpath autodoc-project))]
     (apply sh
            (or (System/getenv "JAVA_CMD") "java")
            "-cp" classpath
