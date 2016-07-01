@@ -7,9 +7,11 @@
   (:import [java.io File]))
 
 (def autodoc-project
-  {:dependencies [['autodoc "1.1.0"]] ;; TODO: Automate this number
+  {:dependencies [['autodoc "1.1.1"]] ;; TODO: Automate this number
    :disable-deps-clean true
-   :checksum-deps true})
+   :checksum-deps true
+   :repositories [["clojars" {:url "http://clojars.org/repo/"
+                              :snapshots false}]]})
 
 (defn build-classpath
   "Build the right classpath for loading the process that includes autodoc
