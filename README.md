@@ -1,6 +1,6 @@
 # An Autodoc plugin for Leiningen
 
-This plugin allows you to use Leiningen to create documentation for 
+This plugin allows you to use Leiningen to create documentation for
 your project using the Autodoc tool,
 the same tool that is used to generate Clojure's own API reference documentation.
 
@@ -11,20 +11,21 @@ see [http://tomfaulhaber.github.com/autodoc/](http://tomfaulhaber.github.com/aut
 ## Usage
 As usual with Leiningen plugins, you can access the plugin in one of two ways:
 
-1. Install the plugin on a per-system basis with "lein plugin install lein-autodoc 0.9.0"
-2. Add "[lein-autodoc 0.9.0]" to the dev-dependencies in your project.clj.
+1. Edit your leiningen profile (`~/.lein/profiles.clj`) to add the plugin. The option will look something like this:
 
-Once installed, you can run "lein autodoc" to generate the documentation for your project.
+```clj
+{:user
+ {:plugins [[autodoc/lein-autodoc "1.1.1"]]
+  ...}
+ :repl { ... }}
+```
 
-## Weirdness
-In order to remain independent of the dependencies of Leiningen (since Autodoc is 
-really a big standalone program with a ton of its own dependencies), lein-autodoc will 
-add a directory under your lib/ called "autodoc". This directory will be filled with 
-Autodoc and its dependencies. lein-autodoc will then run Autodoc in a separate process
-to create the documentation.
+2. Add `[lein-autodoc 1.1.1]` to the `:plugins` in your project.clj.
+
+Once installed, you can run `lein autodoc` to generate the documentation for your project. The output will be in the autodoc subdirectory of your project. Simply open `autodoc/index.html` to browse the documentation.
 
 ## License
 
-Copyright (C) 2012 Tom Faulhaber
+Copyright (C) 2012-2016 Tom Faulhaber
 
 Distributed under the Eclipse Public License, the same as Clojure.
