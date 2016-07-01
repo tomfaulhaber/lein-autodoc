@@ -20,7 +20,7 @@ As usual with Leiningen plugins, you can access the plugin in one of two ways:
  :repl { ... }}
 ```
 
-2. Add `[lein-autodoc 1.1.1]` to the `:plugins` in your project.clj.
+2. Add `[autodoc/lein-autodoc 1.1.1]` to the `:plugins` in your project.clj.
 
 Once installed, you can run `lein autodoc` to generate the documentation for your project. The output will be in the autodoc subdirectory of your project. Simply open `autodoc/index.html` to browse the documentation.
 
