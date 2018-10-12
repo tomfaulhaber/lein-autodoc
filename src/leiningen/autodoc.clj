@@ -7,17 +7,17 @@
   (:import [java.io File]))
 
 (def autodoc-project
-  {:dependencies [['autodoc "1.1.1"]] ;; TODO: Automate this number
+  {:dependencies [['autodoc "1.1.2"]] ;; TODO: Automate this number
    :disable-deps-clean true
    :checksum-deps true
-   :repositories [["clojars" {:url "http://clojars.org/repo/"
+   :repositories [["clojars" {:url "https://clojars.org/repo/"
                               :snapshots false}]]})
 
 (defn build-classpath
   "Build the right classpath for loading the process that includes autodoc
 and the project and its dependencies."
   [project]
-  (join java.io.File/pathSeparatorChar
+  (join File/pathSeparatorChar
         `(~@(get-classpath project)
           ~@(get-classpath autodoc-project))))
 
@@ -36,7 +36,7 @@ prefixing the keywords by --"
                                       (:autodoc project)
                                       `{:source-path ~(join ":" (:source-paths project))
                                         :load-classpath ~(join ":" (get-classpath project))}))
-        classpath (join java.io.File/pathSeparatorChar (get-classpath autodoc-project))]
+        classpath (join File/pathSeparatorChar (get-classpath autodoc-project))]
     (apply sh
            (or (System/getenv "JAVA_CMD") "java")
            "-cp" classpath
